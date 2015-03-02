@@ -2,7 +2,7 @@
 $dbURL="localhost";
 $dbName="student";
 $dbusername="root";
-$dbpassword="db";
+$dbpassword="database";
 $dbdetails=array(
     'url'=>$dbURL,
     'name'=>$dbName,

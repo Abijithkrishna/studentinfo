@@ -15,14 +15,15 @@ if(checkPOST($keys))
                 $row=$rs->fetch_array();
                 if($row['type']=='admin')
                 {
-                    header("location:dashboard.php");
+                    header("location:admin.php");
                 }
                 else{
                     header("location:index.php");
                 }
             }
             else{
-                echo "hi";
+                echo "Invalid UserName or password";
+                header("Refresh:3,index.php");
             }
         }
         else
