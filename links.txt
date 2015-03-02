@@ -1,0 +1,2 @@
+Cryption:
+http://php.net/manual/en/function.crypt.php

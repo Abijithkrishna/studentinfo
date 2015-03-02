@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Review</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-select.css">
+<link rel="stylesheet" href="css/style.css">
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12"><center><h2>Review Form</h2></center></div>
+	</div>
+	<div class="row col-sm-8 col-sm-offset-2">
+	<br><br>
+		<form action="submit.php" method="post">
+		<div class="input-group">
+		  <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
+		  <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" name="name">
+		</div>
+		<br>
+		  <table class="table table-bordered table-hover">
+		  	<thead>
+		  		<tr>
+		  			<th>Project Title</th>
+		  			<th>Rating</th>
+		  			<th>Comment</th>
+		  		</tr>
+		  	</thead>
+		  	<tbody>
+		  		<tr>
+		  			<td>
+		  				<input class="form-control" id="disabledInput" type="text" placeholder="Project 1" disabled>
+		  			</td>
+		  			<td>
+		  				<label class="radio-inline">
+						  <input type="radio" name="Project1" id="inlineRadio1" value="1" required> 1
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project1" id="inlineRadio2" value="2"> 2
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project1" id="inlineRadio3" value="3"> 3
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project1" id="inlineRadio4" value="4"> 4
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project1" id="inlineRadio5" value="5"> 5
+						</label>
+		  			</td>
+		  			<td>
+		  				<input class="form-control" type="text" name="Project1rev" placeholder="your review here">
+		  			</td>
+		  		</tr>
+		  		<tr>
+		  			<td>
+		  				<input class="form-control" id="disabledInput" type="text" placeholder="Project 2" disabled>
+		  			</td>
+		  			<td>
+		  				<label class="radio-inline">
+						  <input type="radio" name="Project2" id="inlineRadio1" value="1" required> 1
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project2" id="inlineRadio2" value="2"> 2
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project2" id="inlineRadio3" value="3"> 3
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project2" id="inlineRadio4" value="4"> 4
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project2" id="inlineRadio5" value="5"> 5
+						</label>
+		  			</td>
+		  			<td>
+		  				<input class="form-control" type="text" name="Project2rev" placeholder="your review here">
+		  			</td>
+		  		</tr>
+		  		<tr>
+		  			<td>
+		  				<input class="form-control" id="disabledInput" type="text" placeholder="Project 3" disabled>
+		  			</td>
+		  			<td>
+		  				<label class="radio-inline">
+						  <input type="radio" name="Project3" id="inlineRadio1" value="1" required> 1
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project3" id="inlineRadio2" value="2"> 2
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project3" id="inlineRadio3" value="3"> 3
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project3" id="inlineRadio4" value="4"> 4
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project3" id="inlineRadio5" value="5"> 5
+						</label>
+		  			</td>
+		  			<td>
+		  				<input class="form-control" type="text" name="Project3rev" placeholder="your review here">
+		  			</td>
+		  		</tr>
+		  		<tr>
+		  			<td>
+		  				<input class="form-control" id="disabledInput" type="text" placeholder="Project 4" disabled>
+		  			</td>
+		  			<td>
+		  				<label class="radio-inline">
+						  <input type="radio" name="Project4" id="inlineRadio1" value="1" required> 1
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project4" id="inlineRadio2" value="2"> 2
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project4" id="inlineRadio3" value="3"> 3
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project4" id="inlineRadio4" value="4"> 4
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project4" id="inlineRadio5" value="5"> 5
+						</label>
+		  			</td>
+		  			<td>
+		  				<input class="form-control" type="text" name="Project4rev" placeholder="your review here">
+		  			</td>
+		  		</tr>
+		  		<tr>
+		  			<td>
+		  				<input class="form-control" id="disabledInput" type="text" placeholder="Project 5" disabled>
+		  			</td>
+		  			<td>
+		  				<label class="radio-inline">
+						  <input type="radio" name="Project5" id="inlineRadio1" value="1" required> 1
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project5" id="inlineRadio2" value="2"> 2
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project5" id="inlineRadio3" value="3"> 3
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project5" id="inlineRadio4" value="4"> 4
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project5" id="inlineRadio5" value="5"> 5
+						</label>
+		  			</td>
+		  			<td>
+		  				<input class="form-control" type="text" name="Project5rev" placeholder="your review here">
+		  			</td>
+		  		</tr>
+		  		<tr>
+		  			<td>
+		  				<input class="form-control" id="disabledInput" type="text" placeholder="Project 6" disabled>
+		  			</td>
+		  			<td>
+		  				<label class="radio-inline">
+						  <input type="radio" name="Project6" id="inlineRadio1" value="1" required> 1
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project6" id="inlineRadio2" value="2"> 2
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project6" id="inlineRadio3" value="3"> 3
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project6" id="inlineRadio4" value="4"> 4
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project6" id="inlineRadio5" value="5"> 5
+						</label>
+		  			</td>
+		  			<td>
+		  				<input class="form-control" type="text" name="Project6rev" placeholder="your review here">
+		  			</td>
+		  		</tr>
+		  		<tr>
+		  			<td>
+		  				<input class="form-control" id="disabledInput" type="text" placeholder="Project 7" disabled>
+		  			</td>
+		  			<td>
+		  				<label class="radio-inline">
+						  <input type="radio" name="Project7" id="inlineRadio1" value="1" required> 1
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project7" id="inlineRadio2" value="2"> 2
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project7" id="inlineRadio3" value="3"> 3
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project7" id="inlineRadio4" value="4"> 4
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project7" id="inlineRadio5" value="5"> 5
+						</label>
+		  			</td>
+		  			<td>
+		  				<input class="form-control" type="text" name="Project7rev" placeholder="your review here">
+		  			</td>
+		  		</tr>
+		  		<tr>
+		  			<td>
+		  				<input class="form-control" id="disabledInput" type="text" placeholder="Project 8" disabled>
+		  			</td>
+		  			<td>
+		  				<label class="radio-inline">
+						  <input type="radio" name="Project8" id="inlineRadio1" value="1" required> 1
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project8" id="inlineRadio2" value="2"> 2
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project8" id="inlineRadio3" value="3"> 3
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project8" id="inlineRadio4" value="4"> 4
+						</label>
+						<label class="radio-inline">
+						  <input type="radio" name="Project8" id="inlineRadio5" value="5"> 5
+						</label>
+		  			</td>
+		  			<td>
+		  				<input class="form-control" type="text" name="Project8rev" placeholder="your review here">
+		  			</td>
+		  		</tr>
+
+		  	</tbody>
+		  	<tfoot>
+		  		<tr>
+		  			<td colspan="3">
+		  				<button class="btn btn-primary pull-right" type="submit" id="reviewsubmit">Submit</button>
+		  			</td>
+		  		</tr>
+		  	</tfoot>
+		  </table>
+		</form>
+	</div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (1,'Placement Management & Profile Makers');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (2,'Multi lingugal conversion');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (3,'My City App');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (4,'People Tracking System');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (5,'wireless Health care system');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (6,'Placement Training using Java');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (7,'CO2 Sensing and Demand Control Ventilation');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (8,'Automatic Compilation of handwritten code');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (9,'Mobile appication for bus tracking');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (10,'Hospital Management System');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (11,'Speed up me');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (12,'Stock Market prediction');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (13,'Fun Website');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (14,'Blood Prototyping Based on Image Processing');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (15,'Power Optimization using Camera');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (16,'Gas Leakage detector for smart phones');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (17,'Amorphous Jamming Gripper');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (18,'Online Shopping Cart');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (19,'Search Engine (Chennai Explorer)');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (20,'Social Networking Website');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (21,'Share Cab');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (22,'Robotics');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (23,'Voice Interface');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (24,'Paperless Hospital Service');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (25,'Smart Meter');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (26,'Detecting obstacles using ultrasonic waves for visually impaired');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (27,'Mobile tracking using distributed system');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (28,'Mobile Hack');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (29,'Sixth Sense');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (30,'Mobile App for Security System');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (31,'teenink');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (32,'TOLLY');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (33,'3D Password');
+INSERT INTO `prjdetails`(`pid`, `pname`) VALUES (34,'Wireless inductive modem charger');
