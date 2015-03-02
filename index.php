@@ -34,10 +34,10 @@
 				           	</div>
 				           	<li class="divider" id="dividerx"></li>
 				           	<div class="form-group">
-				           		<input type="password" placeholder="password" name="password ">
+				           		<input type="password" placeholder="password" name="password">
 				           	</div>
 				           	<li class="divider" id="dividerx"></li>
-				           	<button class="btn btn-primary" type="submit" name="submit">Log In</button>
+				           	<input class="btn btn-primary" type="submit" name="submit" value="Log In"/>
 				           </form>
 			        	</ul>
 			    </li>    	
