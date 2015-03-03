@@ -16,6 +16,9 @@ if(checkPOST($keys))
                 if($row['type']=='admin')
                 {
                     header("location:admin.php");
+                    session_start();
+                    $_SESSION["uname"]=$row['username'];
+                    $_SESSION["type"]=$row{'type'};
                 }
                 else{
                     header("location:index.php");
@@ -23,7 +26,7 @@ if(checkPOST($keys))
             }
             else{
                 echo "Invalid UserName or password";
-                header("Refresh:3,index.php");
+                header("Refresh:1,index.php");
             }
         }
         else
@@ -33,7 +36,7 @@ if(checkPOST($keys))
     }
     else{
         echo "unable to connect";
-        header("Refresh:3,index.php");
+        header("Refresh:1,index.php");
     }
 }
 else
