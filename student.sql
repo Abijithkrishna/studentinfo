@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2015 at 07:27 AM
+-- Generation Time: Mar 03, 2015 at 09:27 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -55,6 +55,13 @@ CREATE TABLE IF NOT EXISTS `staff` (
   PRIMARY KEY (`staffid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `staff`
+--
+
+INSERT INTO `staff` (`staffid`, `staffname`) VALUES
+(123, 'robinhood');
+
 -- --------------------------------------------------------
 
 --
@@ -65,18 +72,24 @@ CREATE TABLE IF NOT EXISTS `studentdetails` (
   `admissionnum` int(11) NOT NULL,
   `regno` text NOT NULL,
   `name` text NOT NULL,
-  `dob` date NOT NULL,
+  `dob` text NOT NULL,
   `father` text NOT NULL,
   `mother` text NOT NULL,
   `native` text NOT NULL,
   `religion` text NOT NULL,
-  `course` int(11) NOT NULL,
+  `course` text NOT NULL,
   `address` text NOT NULL,
   `email` text NOT NULL,
   `mobile` text NOT NULL,
-  `bloodgroup` text NOT NULL,
   PRIMARY KEY (`admissionnum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `studentdetails`
+--
+
+INSERT INTO `studentdetails` (`admissionnum`, `regno`, `name`, `dob`, `father`, `mother`, `native`, `religion`, `course`, `address`, `email`, `mobile`) VALUES
+(1223, '12csa1', 'Abijith Krishna', '27/12/1994', 'Unnikrishnan', 'Jaya Unnikrishnan', 'India', 'Hindu', 'BCA', 'aaaaaaaaaaaaa\r\nbbbbbbbbbbbbbbbbbb\r\nccccccccccccccccccccccc', '7200650096', 'abc@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -85,20 +98,22 @@ CREATE TABLE IF NOT EXISTS `studentdetails` (
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `userid` int(11) NOT NULL,
+  `userid` int(11) NOT NULL AUTO_INCREMENT,
   `username` text,
   `password` text,
   `type` text,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`userid`, `username`, `password`, `type`) VALUES
-(1, 'admin', '$1$2y4.hB4.$e5.y2cVPwTkW1HkPSL7ir0', 'admin'),
-(2, 'staff', '$1$Wi1.n.5.$pSe.IKu96IFgLgFnoxU.I1', 'staff');
+(1, 'admin', 'root', 'admin'),
+(2, 'staff', 'password', 'staff'),
+(3, '12csa1', '1223', 'student'),
+(4, 'staff123', 'robinhood', 'staff');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
