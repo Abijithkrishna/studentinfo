@@ -147,6 +147,13 @@
             </div>
         </div>
     </div>
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <center>&copy <a href="hhttps://www.facebook.com/vicunltd">Vignesh Vijay</a></center>
+            </div>
+        </div>
+    </footer>
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>

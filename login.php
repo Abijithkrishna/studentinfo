@@ -44,7 +44,7 @@ if(checkPOST($keys))
         }
         else
         {
-            $conn->error;
+            echo $conn->error;
         }
     }
     else{

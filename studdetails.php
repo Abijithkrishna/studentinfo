@@ -56,14 +56,7 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
                     <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
                 </p>
                 <div class="jumbotron">
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <label for="studid">Look for Student</label>
-                            <input type="text" class="form-control" name="studid" placeholder="Register Number">
-                        </div>
-                        <button type="button" id="search" class="btn btn-default">Search</button>
-                    </form>
-
+                    <h2 id="aboutheading">Welcome!</h2>
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
