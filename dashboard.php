@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
+if(isset($_SESSION["uname"]) && $_SESSION["type"]=="student") {
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -26,9 +26,8 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
             </div>
             <div class="collapse navbar-collapse navbar-right" id="mobnav">
                 <ul class="nav navbar-nav">
-                    <li><a href="managestudents.php">Students</a></li>
-                    <li><a href="managestaff.php">Staff</a></li>
-                    <li><a href="resultoverview.php">Results</a></li>
+                    <li><a href="studentinfo.php">Details</a></li>
+                    <li><a href="studresult.php">Results</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["uname"];?><span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -41,7 +40,37 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
     </nav>
 
     <div class="container">
-        <div class="row">
+        <div class="row row-offcanvas row-offcanvas-left">
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+                <div class="list-group">
+                    <a href="" class="list-group-item disabled">Side Navbar</a>
+                    <a href="studentinfo.php" class="list-group-item">Info</a>
+                    <a href="studresult.php" class="list-group-item">Student Results</a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                <p class="pull-left visible-xs">
+                    <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+                </p>
+                <div class="jumbotron">
+                    <h2 id="aboutheading">Welcome!</h2>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>
+                            The Admin Page is where the admin of the entire system can perform his duties.
+                        </p>
+                        <p>
+                            The admin can manage the student details and staff details.
+                        </p>
+                        <p>
+                            He/She can add and remove students, assign staff.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
 
         </div>
     </div>

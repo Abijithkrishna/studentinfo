@@ -21,12 +21,15 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand" id="navbaradjust">
+                <a href="admin.php" class="navbar-brand" id="navbaradjust">
                     <img src="images/logo.png" alt="Logo">
                 </a>
             </div>
             <div class="collapse navbar-collapse navbar-right" id="mobnav">
                 <ul class="nav navbar-nav">
+                    <li><a href="managestudents.php">Students</a></li>
+                    <li><a href="managestaff.php">Staff</a></li>
+                    <li><a href="resultoverview.php">Results</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["uname"];?><span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -43,7 +46,7 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
             <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
                 <div class="list-group">
                     <a href="" class="list-group-item disabled">Side Navbar</a>
-                    <a href="addstaff.php" class="list-group-item active">Add Staff</a>
+                    <a href="addstaff.php" class="list-group-item">Add Staff</a>
                     <a href="editstaff.php" class="list-group-item">Edit Staff Details</a>
                     <a href="removestaff.php" class="list-group-item">Remove Staff</a>
                 </div>

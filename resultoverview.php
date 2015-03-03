@@ -41,8 +41,28 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
     </nav>
 
     <div class="container">
-        <div class="row">
-
+        <div class="col-xs-8">
+            <?php
+            if($conn = connectSQL($dbdetails)){
+                $sql= "select username,password,type from users where username='".$_POST['username']."' && password='".$_POST['password']."' limit 1";
+                if($rs=$conn->query($sql))
+                {
+                }
+                else{
+                        echo "Invalid UserName or password";
+                        header("Refresh:1,index.php");
+                    }
+                }
+                else
+                {
+                    $conn->error;
+                }
+            }
+            else{
+                echo "unable to connect";
+                header("Refresh:1,index.php");
+            }
+            ?>
         </div>
     </div>
     </body>

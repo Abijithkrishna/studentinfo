@@ -21,7 +21,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#" class="navbar-brand" id="navbaradjust">
+                    <a href="admin.php" class="navbar-brand" id="navbaradjust">
                         <img src="images/logo.png" alt="Logo">
                     </a>
                 </div>
@@ -43,7 +43,7 @@
                 <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
                     <div class="list-group">
                         <a href="" class="list-group-item disabled">Side Navbar</a>
-                        <a href="managestudents.php" class="list-group-item active">Manage Students</a>
+                        <a href="managestudents.php" class="list-group-item">Manage Students</a>
                         <a href="managestaff.php" class="list-group-item">Manage Staff</a>
                         <a href="studentresults.php" class="list-group-item">Student Results</a>
                         <!--<a href="#" class="list-group-item">Link</a>

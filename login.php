@@ -15,13 +15,26 @@ if(checkPOST($keys))
                 $row=$rs->fetch_array();
                 if($row['type']=='admin')
                 {
-                    header("location:admin.php");
                     session_start();
                     $_SESSION["uname"]=$row['username'];
                     $_SESSION["type"]=$row{'type'};
+                    header("location:admin.php");
+                }
+                else if($row['type']=="staff"){
+                    session_start();
+                    $_SESSION["uname"]=$row['username'];
+                    $_SESSION["type"]=$row{'type'};
+                    header("location:staff.php");
+                }
+                else if($row['type']=="student"){
+                    session_start();
+                    $_SESSION["uname"]=$row['username'];
+                    $_SESSION["type"]=$row{'type'};
+                    header("location:dashboard.php");
                 }
                 else{
-                    header("location:index.php");
+                    echo "invalid user";
+                    header("Refresh:1,index.php");
                 }
             }
             else{

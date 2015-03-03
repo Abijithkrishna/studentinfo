@@ -10,6 +10,13 @@ if(checkPOST($keys))
         if($rs=$conn->query($sql))
         {
             echo "Record Inserted";
+            $sql1 = "INSERT into users(username,password,type) VALUES ('".$_POST['rnum']."',".$_POST['anum'].",'student')";
+            if($rs1=$conn->query($sql1)){
+                echo "user added";
+            }
+            else{
+                echo "\n ask admin to add user";
+            }
             header("Refresh:1,addstudents.php");
         }
         else
