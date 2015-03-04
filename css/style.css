@@ -17,7 +17,9 @@
     font-family: Georgia,"Times New Roman",Times,serif;
     font-size: 36px;
 }
-
+#about{
+    color:#CE0000;
+}
 footer{
     background-color: #000000;
 }

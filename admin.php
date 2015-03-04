@@ -45,7 +45,7 @@
                         <a href="" class="list-group-item disabled">Side Navbar</a>
                         <a href="managestudents.php" class="list-group-item">Manage Students</a>
                         <a href="managestaff.php" class="list-group-item">Manage Staff</a>
-                        <a href="studentresults.php" class="list-group-item">Student Results</a>
+                        <a href="alerts.php" class="list-group-item">Home Page Alerts</a>
                         <!--<a href="#" class="list-group-item">Link</a>
                         <a href="#" class="list-group-item">Link</a>
                         <a href="#" class="list-group-item">Link</a>
@@ -63,15 +63,6 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
-                            <p>
-                                The Admin Page is where the admin of the entire system can perform his duties.
-                            </p>
-                            <p>
-                                The admin can manage the student details and staff details.
-                            </p>
-                            <p>
-                                He/She can add and remove students, assign staff.
-                            </p>
 
                         </div>
                     </div>

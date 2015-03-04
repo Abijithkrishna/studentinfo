@@ -1,7 +1,6 @@
 <?php
 session_start();
 if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
-
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -10,8 +9,8 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
         <meta name="author" content="Vignesh P Vijay">
         <title>Student Information System</title>
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/dataTables.bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
     <nav class="navbar navbar-inverse">
@@ -43,45 +42,37 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
     </nav>
 
     <div class="container">
-        <div class="row row-offcanvas row-offcanvas-left">
-            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-                <div class="list-group">
-                    <a href="" class="list-group-item disabled">Side Navbar</a>
-                    <a href="addstaff.php" class="list-group-item">Add Staff</a>
-                    <a href="editstaff.php" class="list-group-item">Edit Staff Details</a>
-                    <a href="removestaff.php" class="list-group-item">Remove Staff</a>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-9">
-                <p class="pull-left visible-xs">
-                    <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-                </p>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <table class="table table-bordered table-hover table-striped" id="mytable">
-                            <thead>
-                                <tr>
-                                    <th>Staff Id</th>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Class/Department Handled</th>
-                                    <th><button class="btn btn-warning adds">Add Staff</button></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                                require("displaytable.php");
-                                printtable("staff");
-                            ?>
-                            </tbody>
-                        </table>
+        <div class="row">
+            <div class="col-xs-4">
+                <form action="addmessage.php" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="msg" class="col-sm-3 hidden-xs">Message:</label>
+                        <div class="col-xs-12 col-sm-9">
+                            <input class="form-control" name="msg" type="text" placeholder="Name" required"/>
+                        </div>
                     </div>
-                </div>
-
+                    <div class="form-group col-xs-6 pull-right">
+                        <button class="btn btn-primary" name="sub">Add Message</button>
+                    </div>
+                </form>
             </div>
-
+            <div class="col-xs-8">
+                <table class="table table-bordered table-hover table-striped" id="mytable">
+                    <thead>
+                    <tr>
+                        <th>Message</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    require("displaymessage.php");
+                    printtable("alerts");
+                    ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
     </div>
     </body>
     <script src="js/jquery.js"></script>

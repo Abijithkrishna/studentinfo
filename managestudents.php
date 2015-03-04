@@ -30,7 +30,7 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
                 <ul class="nav navbar-nav">
                     <li><a href="managestudents.php">Students</a></li>
                     <li><a href="managestaff.php">Staff</a></li>
-                    <li><a href="resultoverview.php">Results</a></li>
+                    <li><a href="alerts.php">Alerts</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["uname"];?><span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">

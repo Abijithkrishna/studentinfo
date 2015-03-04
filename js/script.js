@@ -112,3 +112,35 @@ $(".searchstaff").click(function () {
     id= document.getElementById("search").value;
     window.location.href="editstudentstaff.php?id="+id;
 });
+
+
+$(".msgremove").click(function () {
+    id=this.value;
+    var ans=confirm("Are you sure to delete message "+id);
+    if(ans)
+    {
+        var saveButton=$(this);
+        saveButton.attr("disabled",true);
+        $.post("deletemessage.php",{
+            id:id
+        },function(data,status){
+            alert(data);
+            if (data === 'success')
+                window.location.reload();
+            else alert(data);
+            saveButton.attr('disabled',false);
+        });
+
+
+    }
+});
+
+$(".msgedit").click(function () {
+    id=this.value;
+    window.location.href="editmessage.php?id="+id;
+});
+
+
+$('.carousel').carousel({
+    interval: 2000
+})

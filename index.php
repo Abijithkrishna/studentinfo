@@ -47,7 +47,20 @@
 	</nav>
 
 	<div class="container">
+        <div class="row">
+            <div class="col-xs-12" style="border: 2px dashed blue">
+                <div class="col-xs-6 col-xs-offset-3">
+                    <div id="textcar" class="carousel slide" data-ride="carousel">
 
+                        <?php
+                            require("printalerts.php");
+                        ?>
+                        <!-- Controls -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
 	</div>
 </body>
 <script src="js/jquery.js"></script>
