@@ -9,7 +9,7 @@
                     $count=$rs->num_rows;
                     while($count>0) {
                         $row = $rs->fetch_array();
-                        echo "<tr><td>".$row['staffid']."</td><td>".$row['staffname']."</td><td>".$row['currentpos']."</td><td>".$row['classhandled']."</td><td><button value='".$row['staffid']."' class='btn btn-primary btnedit'><span class='glyphicon glyphicon-pencil'></span> Edit</button><button value='".$row['staffid']."' class='btn btn-primary btnremoves'><span class='glyphicon glyphicon-remove'></span> Remove</button></td></tr>";
+                        echo "<tr><td>".$row['staffid']."</td><td>".$row['staffname']."</td><td>".$row['currentpos']."</td><td>".$row['classhandled']."</td><td><button value='".$row['staffid']."' class='btn btn-primary btnedits'><span class='glyphicon glyphicon-pencil'></span> Edit</button><button value='".$row['staffid']."' class='btn btn-primary btnremoves'><span class='glyphicon glyphicon-remove'></span> Remove</button></td></tr>";
                         $count--;
                     }
                 }
@@ -23,7 +23,7 @@
                     $count=$rs->num_rows;
                     while($count>0) {
                         $row = $rs->fetch_array();
-                        echo "<tr><td>".$row['admissionnum']."</td><td>".$row['name']."</td><td>".$row['regno']."</td><td>".$row['course']."</td><td><button value='".$row['admissionnum']."' class='btn btn-primary btnedit'><span class='glyphicon glyphicon-pencil'></span> Edit</button><button value='".$row['admissionnum']."' class='btn btn-primary btnedit'><span class='glyphicon glyphicon-remove'></span> Remove</button></td></tr>";
+                        echo "<tr><td>".$row['admissionnum']."</td><td>".$row['name']."</td><td>".$row['regno']."</td><td>".$row['course']."</td><td><button value='".$row['admissionnum']."' class='btn btn-primary btnedit'><span class='glyphicon glyphicon-pencil'></span> Edit</button><button value='".$row['admissionnum']."' class='btn btn-primary btnremove'><span class='glyphicon glyphicon-remove'></span> Remove</button></td></tr>";
                         $count--;
                     }
                 }
