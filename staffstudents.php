@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
+if(isset($_SESSION["uname"]) && $_SESSION["type"]=="staff") {
 
     ?>
     <!DOCTYPE html>
@@ -22,14 +22,13 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="admin.php" class="navbar-brand" id="navbaradjust">
+                <a href="staff.php" class="navbar-brand" id="navbaradjust">
                     <img src="images/logo.png" alt="Logo">
                 </a>
             </div>
             <div class="collapse navbar-collapse navbar-right" id="mobnav">
                 <ul class="nav navbar-nav">
-                    <li><a href="managestudents.php">Students</a></li>
-                    <li><a href="managestaff.php">Staff</a></li>
+                    <li class="active"><a href="staffstudents.php">Students</a></li>
                     <li><a href="resultoverview.php">Results</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["uname"];?><span class="caret"></span></a>
@@ -47,31 +46,30 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
             <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
                 <div class="list-group">
                     <a href="" class="list-group-item disabled">Side Navbar</a>
-                    <a href="addstaff.php" class="list-group-item">Add Staff</a>
-                    <a href="editstaff.php" class="list-group-item">Edit Staff Details</a>
-                    <a href="removestaff.php" class="list-group-item">Remove Staff</a>
+                    <a href="editstudentstaff.php" class="list-group-item">Edit Student Details</a>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-9">
                 <p class="pull-left visible-xs">
                     <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
                 </p>
+
                 <div class="row">
                     <div class="col-xs-12">
                         <table class="table table-bordered table-hover table-striped" id="mytable">
                             <thead>
-                                <tr>
-                                    <th>Staff Id</th>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Class/Department Handled</th>
-                                    <th><button class="btn btn-warning adds">Add Staff</button></th>
-                                </tr>
+                            <tr>
+                                <th>Admission Number</th>
+                                <th>Name</th>
+                                <th>Register Number</th>
+                                <th>Department</th>
+                                <th></th>
+                            </tr>
                             </thead>
                             <tbody>
                             <?php
-                                require("displaytable.php");
-                                printtable("staff");
+                            require("staffdisplaytable.php");
+                            printtable("student");
                             ?>
                             </tbody>
                         </table>

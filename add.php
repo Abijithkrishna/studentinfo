@@ -5,7 +5,7 @@ $keys = array('name','anum','fname','mname','rnum','dob','course','native','reli
 if(checkPOST($keys))
 {
     if($conn = connectSQL($dbdetails)){
-        $sql = "INSERT INTO studentdetails(admissionnum, regno, name, dob, father, mother, native, religion, course, address, email, mobile) VALUES (
+        $sql = "INSERT INTO studentdetails(admissionnum, regno, name, dob, father, mother, native, religion, course, address, mobile,email) VALUES (
                 ".$_POST['anum'].",'".$_POST['rnum']."','".$_POST['name']."','".$_POST['dob']."','".$_POST['fname']."','".$_POST['mname']."','".$_POST['native']."','".$_POST['reli']."','".$_POST['course']."','".$_POST['addr']."','".$_POST['mobile']."','".$_POST['email']."')";
         if($rs=$conn->query($sql))
         {

@@ -1,7 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
-
+if(isset($_SESSION["uname"]) && $_SESSION["type"]=="staff") {
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -11,7 +10,6 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
         <title>Student Information System</title>
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/dataTables.bootstrap.css">
     </head>
     <body>
     <nav class="navbar navbar-inverse">
@@ -28,9 +26,6 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
             </div>
             <div class="collapse navbar-collapse navbar-right" id="mobnav">
                 <ul class="nav navbar-nav">
-                    <li><a href="managestudents.php">Students</a></li>
-                    <li><a href="managestaff.php">Staff</a></li>
-                    <li><a href="resultoverview.php">Results</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["uname"];?><span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -42,52 +37,43 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container" id="wrap">
         <div class="row row-offcanvas row-offcanvas-left">
             <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
                 <div class="list-group">
                     <a href="" class="list-group-item disabled">Side Navbar</a>
-                    <a href="addstaff.php" class="list-group-item">Add Staff</a>
-                    <a href="editstaff.php" class="list-group-item">Edit Staff Details</a>
-                    <a href="removestaff.php" class="list-group-item">Remove Staff</a>
+                    <a href="staffstudents.php" class="list-group-item">Manage Student Details</a>
+                    <a href="studresult.php" class="list-group-item">Manage Student Results</a>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-9">
                 <p class="pull-left visible-xs">
                     <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
                 </p>
-                <div class="row">
+
+                <div class="row" id="main">
                     <div class="col-xs-12">
-                        <table class="table table-bordered table-hover table-striped" id="mytable">
-                            <thead>
-                                <tr>
-                                    <th>Staff Id</th>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Class/Department Handled</th>
-                                    <th><button class="btn btn-warning adds">Add Staff</button></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                                require("displaytable.php");
-                                printtable("staff");
-                            ?>
-                            </tbody>
-                        </table>
+                        <?php
+                            require("staffinfo.php");
+                            staffinfo($_SESSION['uname']);
+                        ?>
                     </div>
                 </div>
 
             </div>
 
         </div>
-
     </div>
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <center>&copy <a href="hhttps://www.facebook.com/vicunltd">Vignesh Vijay</a></center>
+            </div>
+        </div>
+    </footer>
     </body>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/dataTables.bootstrap.js"></script>
     <script src="js/script.js"></script>
     </html>
 <?php

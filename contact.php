@@ -80,7 +80,7 @@
     <footer class="container-fluid">
         <div class="row">
             <div class="col-xs-12">
-                <center>&copy <a href="hhttps://www.facebook.com/vicunltd">Vignesh Vijay</a></center>
+                <center>&copy <a href="https://www.facebook.com/vicunltd">Vignesh Vijay</a></center>
             </div>
         </div>
     </footer>

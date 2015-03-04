@@ -11,6 +11,7 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
         <title>Student Information System</title>
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/dataTables.bootstrap.css">
     </head>
     <body>
     <nav class="navbar navbar-inverse">
@@ -55,28 +56,26 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
                 <p class="pull-left visible-xs">
                     <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
                 </p>
-                <div class="jumbotron">
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <label for="studid">Look for Student</label>
-                            <input type="text" class="form-control" name="studid" placeholder="Register Number">
-                        </div>
-                        <button type="button" id="search" class="btn btn-default">Search</button>
-                    </form>
 
-                </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <p>
-                            The Admin Page is where the admin of the entire system can perform his duties.
-                        </p>
-                        <p>
-                            The admin can manage the student details and staff details.
-                        </p>
-                        <p>
-                            He/She can add and remove students, assign staff.
-                        </p>
-
+                        <table class="table table-bordered table-hover table-striped" id="mytable">
+                            <thead>
+                            <tr>
+                                <th>Admission Number</th>
+                                <th>Name</th>
+                                <th>Register Number</th>
+                                <th>Department</th>
+                                <th><button class="btn btn-warning addst">Add Student</button></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            require("displaytable.php");
+                            printtable("student");
+                            ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -88,6 +87,8 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
     </body>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap.js"></script>
     <script src="js/script.js"></script>
     </html>
 <?php

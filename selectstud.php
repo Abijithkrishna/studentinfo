@@ -1,4 +1,9 @@
 <?php
+    function dispadd($add){
+        foreach ($add as $value) {
+            echo "{$value}<br/>";
+        }
+    }
     function display($id){
         require('praveenlib.php');
         require('datas.php');
@@ -8,6 +13,7 @@
                 $count=$rs->num_rows;
                 if($count>0) {
                     $row = $rs->fetch_array();
+                    $add=explode(',',$row["address"]);
                     echo '<h2 id="aboutheading">Student Details </h2><hr>';
                     echo '<table class="table table-bordered table-hover table-striped">';
                     echo "<thead><tr><th>Info</th><th>Value</th></tr></thead>";
@@ -21,7 +27,7 @@
                     echo '<tr><td>Course:</td><td>'.$row["course"].'</td></tr>';
                     echo '<tr><td>Native:</td><td>'.$row["native"].'</td></tr>';
                     echo '<tr><td>Religion:</td><td>'.$row["religion"].'</td></tr>';
-                    echo '<tr><td>Contact Address:</td><td>'.$row["address"].'</td></tr>';
+                    echo '<tr><td>Contact Address:</td><td>'; ?><?php dispadd($add) ?> <?php echo '</td></tr>';
                     echo '<tr><td>Contact Number:</td><td>'.$row["mobile"].'</td></tr>';
                     echo '<tr><td>Email address:</td><td>'.$row["email"].'</td></tr>';
                     echo '</tbody>';

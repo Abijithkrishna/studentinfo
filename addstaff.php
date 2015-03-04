@@ -58,6 +58,45 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
                             <input class="form-control" name="name" type="text" placeholder="Staff Name" required/>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="qual" class="col-sm-3 hidden-xs">Qualifications:</label>
+                        <div class="col-xs-12 col-sm-9">
+                            <textarea class="form-control" name="qual" rows="2" placeholder="Degree" required></textarea>
+                            <p class="help-block">incase of multiple degrees use comma ,</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="addr" class="col-sm-3 hidden-xs">Contact Address</label>
+                        <div class="col-xs-12 col-sm-9">
+                            <textarea class="form-control" name="addr" rows="3" placeholder="door num,street,area" required></textarea>
+                            <p class="help-block">use , as a seperator for lines in address</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phn" class="col-sm-3 hidden-xs">Phone:</label>
+                        <div class="col-xs-12 col-sm-9">
+                            <input class="form-control" name="phn" type="text" placeholder="+abc-abcdefghi" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pos" class="col-sm-3 hidden-xs">Position:</label>
+                        <div class="col-xs-12 col-sm-9">
+                            <input class="form-control" name="pos" type="text" placeholder="HOD/Class Incharge/Subject Staff" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="class" class="col-sm-3 hidden-xs">Class Handled:</label>
+                        <div class="col-xs-12 col-sm-9">
+                            <input class="form-control" name="class" type="text" placeholder="eg: BCA 3rd year" required/>
+                            <p class="help-block">If its an HOD, enter his department</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-3 hidden-xs">Email:</label>
+                        <div class="col-xs-12 col-sm-9">
+                            <input class="form-control" name="email" type="text" placeholder="staff@kcc.edu" required/>
+                        </div>
+                    </div>
                     <div class="form-group col-xs-6 pull-right">
                         <button class="btn btn-primary btn-block">Add</button>
                     </div>

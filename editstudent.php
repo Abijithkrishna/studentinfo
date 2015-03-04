@@ -1,17 +1,27 @@
 <?php
     session_start();
     if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
+        require_once "praveenlib.php";
+        require_once "datas.php";
+
+        $dbconnection = connectSQL($dbdetails);
+
+        if(mysqli_connect_errno()) //Check if any error occurred on connection
+        {
+            echo "db_connection_fail";
+        }
+        else {
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Vignesh P Vijay">
-    <title>Student Information System</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Vignesh P Vijay">
+        <title>Student Information System</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
     <nav class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header" id="imghead">
@@ -42,109 +52,97 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-6">
-                <h2 id="aboutheading">Add Student</h2>
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <h2 id="aboutheading">Edit Student</h2>
+                <?php
+                if (isset($_GET['id'])) {
 
-                <form class="form-horizontal" action="add.php" method="post">
+                $id = $_GET['id'];
+                $query = "select * from studentdetails where admissionnum='". $id."'  limit 1";
+
+                if ($result=$dbconnection->query($query)){
+                if($result->num_rows==1) {
+
+
+                $row = $result->fetch_array();?>
+                <form class="form-horizontal" action="submitedit.php" method="post">
                     <div class="form-group">
                         <label for="name" class="col-sm-3 hidden-xs">Name:</label>
                         <div class="col-xs-12 col-sm-9">
-                            <input class="form-control" name="name" type="text" placeholder="Name" required/>
+                            <input class="form-control" name="name" type="text" placeholder="Name" required value="<?php echo $row['name'] ?>"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="anum" class="col-sm-3 hidden-xs">Admission Num:</label>
                         <div class="col-xs-12 col-sm-9">
-                            <input class="form-control" name="anum" type="text" placeholder="Admission Number" required/>
+                            <input class="form-control" name="anum" type="text" placeholder="Admission Number" readonly value="<?php echo $row['admissionnum'] ?>" required/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="fname" class="col-sm-3 hidden-xs">Fathers Name:</label>
                         <div class="col-xs-12 col-sm-9">
-                            <input class="form-control" name="fname" type="text" placeholder="Fathers Name" required/>
+                            <input class="form-control" name="fname" type="text" placeholder="Fathers Name" required value="<?php echo $row['father'] ?>"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="mname" class="col-sm-3 hidden-xs">Mothers Name:</label>
                         <div class="col-xs-12 col-sm-9">
-                            <input class="form-control" name="mname" type="text" placeholder="Mothers Name" required/>
+                            <input class="form-control" name="mname" type="text" placeholder="Mothers Name" required value="<?php echo $row['mother'] ?>"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="rnum" class="col-sm-3 hidden-xs">Register Num:</label>
                         <div class="col-xs-12 col-sm-9">
-                            <input class="form-control" name="rnum" type="text" placeholder="Register Number" required/>
+                            <input class="form-control" name="rnum" type="text" placeholder="Register Number" readonly required value="<?php echo $row['regno'] ?>"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="dob" class="col-sm-3 hidden-xs">DOB:</label>
                         <div class="col-xs-12 col-sm-9">
-                            <input class="form-control" name="dob" type="date" placeholder="DD/MM/YYYY" required/>
+                            <input class="form-control" name="dob" type="date" placeholder="DD/MM/YYYY" required value="<?php echo $row['dob'] ?>"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="course" class="col-sm-3 hidden-xs">Course</label>
                         <div class="col-xs-12 col-sm-9">
-                            <input class="form-control" name="course" type="text" placeholder="Course" required/>
+                            <input class="form-control" name="course" type="text" placeholder="Course" required value="<?php echo $row['course'] ?>"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="native" class="col-sm-3 hidden-xs">Native</label>
                         <div class="col-xs-12 col-sm-9">
-                            <input class="form-control" name="native" placeholder="Native Country" type="text" required/>
+                            <input class="form-control" name="native" placeholder="Native Country" type="text" required value="<?php echo $row['native'] ?>"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="reli" class="col-sm-3 hidden-xs">Religion</label>
                         <div class="col-xs-12 col-sm-9">
-                            <input class="form-control" name="reli" type="text" placeholder="Religion" required/>
+                            <input class="form-control" name="reli" type="text" placeholder="Religion" required value="<?php echo $row['religion'] ?>"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="addr" class="col-sm-3 hidden-xs">Contact Address</label>
                         <div class="col-xs-12 col-sm-9">
-                            <textarea class="form-control" name="addr" cols="10" rows="5" placeholder="door num,street,area" required></textarea>
+                            <textarea class="form-control" name="addr" cols="10" rows="5" placeholder="door num,street,area" required><?php echo $row['address'] ?></textarea>
                             <p class="help-block">use , as a seperator for lines in address</p>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="mobile" class="col-sm-3 hidden-xs">Mobile</label>
                         <div class="col-xs-12 col-sm-9">
-                            <input class="form-control" name="mobile" type="text" placeholder="+abc-abcdefghi" required/>
+                            <input class="form-control" name="mobile" type="text" placeholder="+abc-abcdefghi" required value="<?php echo $row['mobile'] ?>"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="email" class="col-sm-3 hidden-xs">Email ID</label>
                         <div class="col-xs-12 col-sm-9">
-                            <input class="form-control" name="email" type="email" placeholder="abc@def.ghi"/>
+                            <input class="form-control" name="email" type="email" placeholder="abc@def.ghi" value="<?php echo $row['email'] ?>"/>
                         </div>
                     </div>
                     <div class="form-group col-xs-6 pull-right">
-                        <button class="btn btn-primary btn-block" value=1 name="sub">Add</button>
+                        <button class="btn btn-primary btn-block" value=1 name="sub">Save</button>
                     </div>
                 </form>
-            </div>
-            <div class="col-xs-6">
-                <h2 id="aboutheading">Upload Details</h2>
-                <form action="upload.php" method="post">
-                    <div class="form-group">
-                        <label for="fileup">File Upload</label>
-                        <input class="" type="file"/>
-                        <p class="help-block">Upload only excel or Csv file in the specified format.</p>
-                    </div>
-                    <div class="form-group col-xs-offset-6 col-xs-6">
-                        <button class="btn btn-info btn-block" type="submit">Upload!</button>
-                    </div>
-                </form>
-                <div class="col-xs-12">
-                    <hr/>
-                    <h5>Format:</h5>
-                    <ul>
-                        <li>Excel or CSV file with 13 feilds</li>
-                        <li>Feilds should be same as those in the form on the left</li>
-                        <li>Feild order should not be changed.</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -155,14 +153,39 @@
             </div>
         </div>
     </footer>
-</body>
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/script.js"></script>
-</html>
+                <?php
+                }
+                }else{
+                    echo $dbconnection->error;
+                }
+                }
+                else{?>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="search" class="col-sm-4 hidden-xs">Search by Admission Number:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <input class="form-control" id="search" type="text" placeholder="number" />
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-6 pull-right">
+                            <button class="btn btn-primary btn-block search" name="sear" type="button">Search</button>
+                        </div>
+                    </form>
+                    </div>
+        </div>
+    </div>
+                    <?php
+                }
+                ?>
+    </body>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
+    </html>
 <?php
-    }
-    else{
-        header("location:index.php");
-    }
+        }
+}
+else{
+    header("location:index.php");
+}
 ?>
