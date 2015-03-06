@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2015 at 09:37 PM
+-- Generation Time: Mar 06, 2015 at 06:38 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `alerts` (
   `msgid` int(11) NOT NULL AUTO_INCREMENT,
   `message` text NOT NULL,
   PRIMARY KEY (`msgid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `alerts`
@@ -38,8 +38,9 @@ CREATE TABLE IF NOT EXISTS `alerts` (
 
 INSERT INTO `alerts` (`msgid`, `message`) VALUES
 (2, 'Hello world!'),
-(3, 'Message two'),
-(4, 'Results have been entered.');
+(4, 'Results have been entered.'),
+(5, 'Message 4'),
+(6, 'sibi is here');
 
 -- --------------------------------------------------------
 
@@ -133,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `studentdetails` (
 
 INSERT INTO `studentdetails` (`admissionnum`, `regno`, `name`, `dob`, `father`, `mother`, `native`, `religion`, `course`, `address`, `mobile`, `email`) VALUES
 (1001, '12bca1', 'Vignesh Vijay', '12/12/1992', 'Vijay', 'Padma kumari', 'India', 'Hindu', 'BCA', 'sachu mon,thiruvalla,kerala', '111111111111', 'vick@adh.com'),
-(1223, '12csa1', 'Abijith Krishna', '27/12/1994', 'Unnikrishnan', 'Jaya Unnikrishnan', 'India', 'Hindu', 'BCA', 'aaaaaaaaaaaaa,bbbbbbbbbbbbbbbbbb,ccccccccccccccccccccccc', '7200650096', 'abc@kcc.edu');
+(1223, '12csa1', 'Abijith Krishna', '27/12/1994', 'Unnikrishnan', 'Jaya Unnikrishnan', 'India', 'Hindu', 'BCA', 'aaaaaaaaaaaaa,bbbbbbbbbbbbbbbbbb,ccccccccccccccccccccccc', '7200650095', 'abc@kcc.edu');
 
 -- --------------------------------------------------------
 
