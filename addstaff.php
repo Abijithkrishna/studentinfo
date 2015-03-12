@@ -104,23 +104,24 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
             </div>
             <div class="col-xs-6">
                 <h2 id="aboutheading">Upload Details</h2>
-                <form action="upload.php" method="post">
+                <form action="uploads.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="fileup">File Upload</label>
-                        <input class="" type="file"/>
-                        <p class="help-block">Upload only excel or Csv file in the specified format.</p>
+                        <input type="file" name="csv" id="csv"/>
+                        <p class="help-block">Upload Csv file in the specified format.</p>
                     </div>
                     <div class="form-group col-xs-offset-6 col-xs-6">
-                        <button class="btn btn-info btn-block" type="submit">Upload!</button>
+                        <button class="btn btn-info btn-block" type="submit" name="submit" value="submit">Upload!</button>
                     </div>
                 </form>
                 <div class="col-xs-12">
                     <hr/>
                     <h5>Format:</h5>
                     <ul>
-                        <li>Excel or CSV file with 2 feilds</li>
+                        <li>CSV file with 8 feilds</li>
                         <li>Feilds should be same as those in the form on the left</li>
                         <li>Feild order should not be changed.</li>
+                        <li>Values should be separated by ;</li>
                     </ul>
                 </div>
             </div>

@@ -85,7 +85,12 @@
                     <div class="form-group">
                         <label for="course" class="col-sm-3 hidden-xs">Course</label>
                         <div class="col-xs-12 col-sm-9">
-                            <input class="form-control" name="course" type="text" placeholder="Course" required/>
+                            <!--<input class="form-control" name="course" type="text" placeholder="Course" required/>-->
+                            <select name="course" id="course">
+                                <option value="BCA">BCA</option>
+                                <option value="BSC Maths">BSC MAths</option>
+                                <option value="BA">BA</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
@@ -130,7 +135,7 @@
                     <div class="form-group">
                         <label for="fileup">File Upload</label>
                         <input class="" type="file"/>
-                        <p class="help-block">Upload only excel or Csv file in the specified format.</p>
+                        <p class="help-block">Upload only Csv file in the specified format.</p>
                     </div>
                     <div class="form-group col-xs-offset-6 col-xs-6">
                         <button class="btn btn-info btn-block" type="submit">Upload!</button>
@@ -140,9 +145,10 @@
                     <hr/>
                     <h5>Format:</h5>
                     <ul>
-                        <li>Excel or CSV file with 13 feilds</li>
+                        <li>CSV file with 13 feilds</li>
                         <li>Feilds should be same as those in the form on the left</li>
                         <li>Feild order should not be changed.</li>
+                        <li>Values should be seperated by ;</li>
                     </ul>
                 </div>
             </div>

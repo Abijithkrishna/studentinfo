@@ -6,8 +6,8 @@ function display($id){
         $sql = "select * from result where regno='" .$id. "' group by semester";
         if ($rs = $conn->query($sql)) {
             $count=$rs->num_rows;
+            echo '<h2 id="aboutheading">Results</h2><hr>';
             if($count>0) {
-                echo '<h2 id="aboutheading">Results</h2><hr>';
                 while ($count > 0) {
                     $sql = "select * from result where regno='" . $id . "' && semester=" . $count;
                     if ($rs1 = $conn->query($sql)) {
@@ -25,7 +25,7 @@ function display($id){
                 }
             }
             else{
-                echo "<br/> Invalid Register number";
+                echo "<br/> No Results Till Now!";
             }
         }
         else{
