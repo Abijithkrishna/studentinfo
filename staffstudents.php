@@ -29,7 +29,7 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="staff") {
             <div class="collapse navbar-collapse navbar-right" id="mobnav">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="staffstudents.php">Students</a></li>
-                    <li><a href="resultoverview.php">Results</a></li>
+                    <li><a href="studresults.php">Results</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["uname"];?><span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">

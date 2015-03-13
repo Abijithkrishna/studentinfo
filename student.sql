@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 06, 2015 at 06:38 PM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Host: localhost
+-- Generation Time: Mar 13, 2015 at 05:17 PM
+-- Server version: 5.5.41-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `result` (
 --
 
 INSERT INTO `result` (`regno`, `semester`, `subcode`, `grade`) VALUES
-('12csa1', 1, 'ULT01', 'A'),
+('12csa1', 1, 'ULT01', 'B'),
 ('12csa1', 1, 'UES01', 'A+'),
 ('12csa1', 1, 'CAC11', 'B'),
 ('12csa1', 1, 'BTNAA', 'D'),
@@ -77,7 +77,13 @@ INSERT INTO `result` (`regno`, `semester`, `subcode`, `grade`) VALUES
 ('12csa1', 3, 'CANAC', 'B+'),
 ('12csa1', 3, 'CAC3P', 'B+'),
 ('12csa1', 3, 'CAC3Q', 'D'),
-('12csa1', 3, 'CAA30', 'C');
+('12csa1', 3, 'CAA30', 'C'),
+('12csa1', 4, 'sub1', 'a'),
+('12csa1', 4, 'sub2', 'b'),
+('12csa1', 4, 'sub3', 'c'),
+('12csa1', 4, 'sub4', 'd'),
+('12csa1', 4, 'sub5', 'e'),
+('12csa1', 4, 'sub6', 'f');
 
 -- --------------------------------------------------------
 
@@ -134,7 +140,8 @@ CREATE TABLE IF NOT EXISTS `studentdetails` (
 
 INSERT INTO `studentdetails` (`admissionnum`, `regno`, `name`, `dob`, `father`, `mother`, `native`, `religion`, `course`, `address`, `mobile`, `email`) VALUES
 (1001, '12bca1', 'Vignesh Vijay', '12/12/1992', 'Vijay', 'Padma kumari', 'India', 'Hindu', 'BCA', 'sachu mon,thiruvalla,kerala', '111111111111', 'vick@adh.com'),
-(1223, '12csa1', 'Abijith Krishna', '27/12/1994', 'Unnikrishnan', 'Jaya Unnikrishnan', 'India', 'Hindu', 'BCA', 'aaaaaaaaaaaaa,bbbbbbbbbbbbbbbbbb,ccccccccccccccccccccccc', '7200650095', 'abc@kcc.edu');
+(1223, '12csa1', 'Abijith Krishna', '27/12/1994', 'Unnikrishnan', 'Jaya Unnikrishnan', 'India', 'Hindu', 'BCA', 'aaaaaaaaaaaaa,bbbbbbbbbbbbbbbbbb,ccccccccccccccccccccccc', '7200650095', 'abc@kcc.edu'),
+(3214, '12bcom1', 'Akshai Krishna', '18/10/1996', 'Unnikrishnan', 'Jaya Unnikrishnan', 'India', 'Hindu', 'BA', 'aaaaaaaa,bbbbbbbb', '9494949494494', 'aaaa@d.cpm');
 
 -- --------------------------------------------------------
 
@@ -148,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` text,
   `type` text,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `users`
@@ -161,7 +168,8 @@ INSERT INTO `users` (`userid`, `username`, `password`, `type`) VALUES
 (4, 'staff123', 'robinhood', 'staff'),
 (5, '12bca1', '1001', 'student'),
 (7, 'staff001', 'BSCHOD', 'staff'),
-(9, 'staff321', 'Vic', 'staff');
+(9, 'staff321', 'Vic', 'staff'),
+(10, '12bcom1', '3214', 'student');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

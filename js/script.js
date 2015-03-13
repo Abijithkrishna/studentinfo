@@ -17,13 +17,6 @@ function initialize() {
     marker.setMap(map);
 }
 
-$(document).ready(function () {
-    $('[data-toggle="offcanvas"]').click(function () {
-        $('.row-offcanvas').toggleClass('active')
-    });
-    $('#mytable').dataTable();
-});
-
 $(".adds").click(function () {
     window.location.href="addstaff.php";
 });
@@ -140,7 +133,26 @@ $(".msgedit").click(function () {
     window.location.href="editmessage.php?id="+id;
 });
 
-
+$(".redit").click(function(){
+    reg = document.getElementById("regno").value;
+    sem = document.getElementById("semester").value;
+    window.location.href="editresult.php?reg="+reg+"&sem="+sem;
+});
+$(".searchres").click(function(){
+    reg = document.getElementById("regnox").value;
+    sem = document.getElementById("semesterx").value;
+    window.location.href="editresult.php?reg="+reg+"&sem="+sem;
+});
 $('.carousel').carousel({
     interval: 2000
-})
+});
+$(function() {
+    $(".rslides").responsiveSlides();
+});
+
+$(document).ready(function () {
+    $('[data-toggle="offcanvas"]').click(function () {
+        $('.row-offcanvas').toggleClass('active')
+    });
+    $('#mytable').dataTable();
+});

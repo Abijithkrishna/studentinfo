@@ -5,11 +5,11 @@ $keys = array('name','email','subject','comment');
 
 if(checkPOST($keys)){
     $to = "abijitharc@gmail.com";
-    $from = "From: ".$_POST['email']."/r/n";
+    $from = "From: ".$_POST['email'];
     $message = $_POST['comment'];
     $subject = $_POST['subject'];
     $name = $_POST['name'];
-    $name = $name ." /n".$message;
+    $name = $name ." Message: ".$message;
     mail($to,$subject,$name,$from);
 
     echo "<h3>Message Sent</h3>";

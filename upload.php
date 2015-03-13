@@ -7,10 +7,15 @@ $keys = array("submit");
 if(checkPOST($keys)){
     if($conn = connectSQL($dbdetails)){
         if ($_FILES[csv][size] > 0) {
+            $info = pathinfo($_FILES['csv']['name']);
+            $ext = $info['extension']; // get the extension of the file
+            $newname = "student.".$ext;
 
+            $target = 'files/'.$newname;
+            move_uploaded_file( $_FILES['csv']['tmp_name'], $target);
 
-            $file = $_FILES[csv][tmp_name];
-            $handle = fopen($file,"r");
+            //$file = $_FILES['csv']['name'];
+            $handle = fopen("files/student.csv","r");
 
             while ($data = fgetcsv($handle,1000,";","'")); {
                 if ($data[0]) {

@@ -49,7 +49,7 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="admin") {
                     <a href="" class="list-group-item disabled">Side Navbar</a>
                     <a href="addstudents.php" class="list-group-item">Add Students</a>
                     <a href="editstudent.php" class="list-group-item">Edit Student Details</a>
-                    <a href="removestudent.php" class="list-group-item">Remove Student</a>
+                    <!--<a href="removestudent.php" class="list-group-item">Remove Student</a>-->
                 </div>
             </div>
             <div class="col-xs-12 col-sm-9">

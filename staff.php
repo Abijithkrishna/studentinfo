@@ -43,7 +43,7 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="staff") {
                 <div class="list-group">
                     <a href="" class="list-group-item disabled">Side Navbar</a>
                     <a href="staffstudents.php" class="list-group-item">Manage Student Details</a>
-                    <a href="studresult.php" class="list-group-item">Manage Student Results</a>
+                    <a href="studresults.php" class="list-group-item">Manage Student Results</a>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-9">

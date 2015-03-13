@@ -18,11 +18,7 @@ if(checkPOST($keys)){
             $handle = fopen("files/staff.csv","r");
 
             while ($data = fgetcsv($handle,1000,";","'")); {
-                print_r($data);
-                echo "hi";
-                echo $data[0];
                 if ($data[0]) {
-                    echo "hi";
                     $rs = $conn->query("INSERT INTO staff(staffid,staffname,qualification,address,phone,currentpos,classhandled,email) VALUES
                 (
                     '".addslashes($data[0])."',
@@ -35,7 +31,6 @@ if(checkPOST($keys)){
                     '".addslashes($data[7])."'
                 )
             ");
-                    echo "hi";
                    $rs1 = $conn->query("Insert into users (username, password, type) values(
                     'staff".addslashes($data[0])."',
                     '".addslashes($data[1])."',
@@ -45,15 +40,15 @@ if(checkPOST($keys)){
             }
 
             echo "Upload Successful";
-            header("Refresh:10,addstaff.php");
+            header("Refresh:2,addstaff.php");
         }
     }
     else{
         echo "Unable to connect to DB";
-        header("Refresh:10,addstaff.php");
+        header("Refresh:2,addstaff.php");
     }
 }
 else{
     echo "Not enough parameters";
-    header("Refresh:10,addstaff.php");
+    header("Refresh:2,addstaff.php");
 }

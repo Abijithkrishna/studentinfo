@@ -53,20 +53,24 @@ if(isset($_SESSION["uname"]) && $_SESSION["type"]=="student") {
                     <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
                 </p>
                 <div class="jumbotron">
-                    <h2 id="aboutheading">Welcome!</h2>
+                    <h2 id="aboutheading">Welcome <?php
+                        require('praveenlib.php');
+                        require('datas.php');
+                        if($conn = connectSQL($dbdetails)) {
+                            $sql = "select * from studentdetails where regno='" . $_SESSION['uname'] . "' limit 1";
+                            if ($rs = $conn->query($sql)) {
+                                $count = $rs->num_rows;
+                                if ($count > 0) {
+                                    $row = $rs->fetch_array();
+                                    echo $row['name'];
+                                }
+                            }
+                        }
+                        ?>
+                         !</h2>
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <p>
-                            The Admin Page is where the admin of the entire system can perform his duties.
-                        </p>
-                        <p>
-                            The admin can manage the student details and staff details.
-                        </p>
-                        <p>
-                            He/She can add and remove students, assign staff.
-                        </p>
-
                     </div>
                 </div>
 

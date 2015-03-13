@@ -5,6 +5,7 @@
 	<meta name="author" content="Vignesh P Vijay">
 	<title>Student Information System</title>
 	<link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/responsiveslides.css"/>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -62,8 +63,23 @@
             </div>
         </div>
 	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+
+                        <ul class="rslides">
+                            <li><img class="img-responsive img-thumbnail" src="images/logo.png" alt=""/></li>
+                            <li><img class="img-responsive img-thumbnail" src="images/about.jpg" alt=""/></li>
+                            <li><img class="img-responsive img-thumbnail" src="images/about.jpg" alt=""/></li>
+                        </ul>
+
+            </div>
+        </div>
+    </div>
+
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/responsiveslides.min.js"></script>
 <script src="js/script.js"></script>
 </html>
